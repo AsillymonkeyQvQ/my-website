@@ -1,0 +1,20 @@
+.footer {
+    height: 100px;
+    padding: 40px 70px 40px 150px;
+    background-color: rgb(240,240,240);
+    font-family: "PlayfairDisplay";
+    font-size: 14px;
+}
+
+.footer .terms {
+    float: left;
+    margin-right: 20px;
+}
+
+.footer .privacy {
+    float: left;
+}
+
+.footer .follow {
+    float: right;
+}

@@ -1,0 +1,45 @@
+.header {
+    width: 1062px;
+    height: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.header .logo {
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+
+.header .logo a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    letter-spacing: 3px;
+    font-family: "Inconsolata";
+    font-size: 30px;
+}
+
+.header .navigation {
+    height: 50px;
+    float: right;
+    line-height: 50px;
+}
+
+.header .navigation ul {
+    height: 50px;
+}
+
+.header .navigation ul li {
+    display: inline-block;
+    height: 50px;
+    margin-left: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header .navigation ul li a {
+    text-decoration: none;
+    color: rgb(98, 98, 98);
+    font-family: "PlayfairDisplay";
+    font-size: 14px;
+}

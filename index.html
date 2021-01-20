@@ -2,15 +2,14 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
         <link rel="stylesheet" type="text/css" href="css/global.css"/>
-        <link rel="stylesheet" type="text/css" href="css/header.css">
-        <link rel="stylesheet" type="text/css" href="css/index-container.css">
-        <link rel="stylesheet" type="text/css" href="css/footer.css">
+        <link rel="stylesheet" type="text/css" href="css/main-index.css">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
         <title>孙泽海的个人网站主页</title>
     </head>
     <body>
-        <header class="header">
+        <!-- header -->
+        <header id="header">
             <div class="logo">
                 <a href="http://www.sunzehai.com">Asillymonkey</a>
             </div>
@@ -23,8 +22,10 @@
                 </ul>
             </nav>
         </header>
-        <div class="index-container">
-            <div class="topic">
+
+        <!-- main -->
+        <main id="main-index">
+            <section class="topic">
                 <img src="images/topic.jpg"/>
                 <div class="topic-content-wapper">
                     <div class="content-type">LIFESTYLE</div>
@@ -38,14 +39,14 @@
                     </p>
                     <p class="etc">...</p>
                 </div>
-            </div>
+            </section>
 
-            <div class="pieces">
+            <section class="pieces">
                 <div class="piece">
                     <img src="images/piece1.jpg"/>
                     <div class="piece-content-wapper">
                         <div class="content-type">ANIMATION</div>
-                        <div class="content-heading"><a href="#">秒速五厘米</a></div>
+                        <h1 class="content-heading"><a href="#">秒速五厘米</a></h1>
                         <p class="content-body">
                             （测试文本）《秒速五厘米》（日语：秒速5センチメートル -a chain of short stories about their distance-），是一部由新海诚导演，于2007年上映的日本动画电影，同年在亚洲太平洋电影奖中获得最佳动画长篇奖[2][3]。片名《秒速五厘米》所指的是樱花瓣落下的速度。
                         </p>
@@ -55,7 +56,7 @@
                     <img src="images/piece2.jpg"/>
                     <div class="piece-content-wapper">
                         <div class="content-type">LIFESTYLE</div>
-                        <div class="content-heading"><a href="#">代代木公园</a></div>
+                        <h1 class="content-heading"><a href="#">代代木公园</a></h1>
                         <p class="content-body">
                             （测试文本）代代木公园是位于日本东京都涩谷区代代木的公园，为东京的大型都市公园之一。由东京都建设局委托东京都公园协会管理。
                         </p>
@@ -65,7 +66,7 @@
                     <img src="images/piece3.jpg"/>
                     <div class="piece-content-wapper">
                         <div class="content-type">TECHNOLOGY</div>
-                        <div class="content-heading"><a href="#">树莓派</a></div>
+                        <h1 class="content-heading"><a href="#">树莓派</a></h1>
                         <p class="content-body">
                             （测试文本）树莓派（英语：Raspberry Pi）是基于Linux的单片机电脑，由英国树莓派基金会开发，目的是以低价硬件及自由软件促进学校的基本计算机科学教育。
                             树莓派每一代均使用博通（Broadcom）出产的ARM架构处理器，如今生产的机型内存在2GB和8GB之间，主要使用SD卡或者TF卡作为存储媒体，配备USB接口、HDMI的视频输出（支持声音输出）和RCA端子输出，内置Ethernet/WLAN/Bluetooth网络链接的方式（依据型号决定），并且可使用多种操作系统。产品线型号分为A型、B型、Zero型和ComputeModule计算卡。
@@ -76,28 +77,28 @@
                     <img src="images/piece4.jpg"/>
                     <div class="piece-content-wapper">
                         <div class="content-type">LIFESTYLE</div>
-                        <div class="content-heading"><a href="#">花火大会</a></div>
+                        <h1 class="content-heading"><a href="#">花火大会</a></h1>
                         <p class="content-body">
                             （测试文本）隅田川花火大会（すみだがわはなびたいかい）は、東京都の隅田川沿い（台東区浅草（右岸）・墨田区向島（左岸）周辺）の河川敷において毎年7月最終土曜日に行われる花火大会である。毎年8月に開催される江戸川区花火大会とともに東京二大花火大会の一つに数えられる。
                         </p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="newsletter">
+            <section class="newsletter">
                 <p>Sign up for my newsletter!</p>
                 <div class="email">
                     <div class="email-input">Enter a valid email address</div>
                     <div class="email-submit"><i class="far fa-paper-plane"></i></div>
                 </div>
-            </div>
+            </section>
 
-            <div class="pieces">
+            <section class="pieces">
                 <div class="piece">
                     <img src="images/piece5.jpg"/>
                     <div class="piece-content-wapper">
                         <div class="content-type">TECHNOLOGY</div>
-                        <div class="content-heading"><a href="#">个人电脑</a></div>
+                        <h1 class="content-heading"><a href="#">个人电脑</a></h1>
                         <p class="content-body">
                             （测试文本）个人电脑（英语：Personal Computer，缩写：PC；普遍称为电脑）是在大小、性能以及价位等多个方面适合于个人使用，并由最终用户直接操控的计算机的统称。它与批处理计算机或分时系统等一般同时由多人操控的大型计算机相对。从台式机（或称台式电脑、桌面电脑）、笔记本电脑到小型笔记本电脑和平板电脑以及超级本等都属于个人电脑的范围。
                         </p>
@@ -107,20 +108,21 @@
                     <img src="images/piece6.jpg"/>
                     <div class="piece-content-wapper">
                         <div class="content-type">JAPANESE</div>
-                        <div class="content-heading"><a href="#">トミカ</a></div>
+                        <h1 class="content-heading"><a href="#">トミカ</a></h1>
                         <p class="content-body">
                             （测试文本）トミカ（Tomica）は1970年（昭和45年）からタカラトミー（旧・トミー）のTOMYブランドより販売されている、自動車玩具である。2020年には誕生50周年を迎えた。
                         </p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="more">
+            <section class="more">
                 <button class="load-more">Load more</button>
-            </div>
-        </div>
+            </section>
+        </main>
 
-        <footer class="footer">
+        <!-- footer -->
+        <footer id="footer">
             <p class="terms">Terms and conditions</p>
             <p class="privacy">Privacy</p>
             <p class="follow">Follow&nbsp;&nbsp;<a href="https://github.com/AsillymonkeyQvQ"><i class="fab fa-github"></i></a></p>

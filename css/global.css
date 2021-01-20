@@ -1,3 +1,4 @@
+/* font definition */
 @font-face {
     font-family: "Inconsolata";
     src: url("../fonts/Inconsolata.ttf");    
@@ -18,15 +19,86 @@
     src: url("../fonts/NotoSerifSC.otf");
 }
 
+/* common */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* body */
 body {
     width: 1200px;
     margin: 0 auto;
     padding-left: 69px;
     padding-right: 69px;
+}
+
+/* header */
+#header {
+    width: 1062px;
+    height: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#header .logo {
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+
+#header .logo a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    letter-spacing: 3px;
+    font-family: "Inconsolata";
+    font-size: 30px;
+}
+
+#header .navigation {
+    height: 50px;
+    float: right;
+    line-height: 50px;
+}
+
+#header .navigation ul {
+    height: 50px;
+}
+
+#header .navigation ul li {
+    display: inline-block;
+    height: 50px;
+    margin-left: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#header .navigation ul li a {
+    text-decoration: none;
+    color: rgb(98, 98, 98);
+    font-family: "PlayfairDisplay";
+    font-size: 14px;
+}
+
+#footer {
+    height: 100px;
+    padding: 40px 70px 40px 150px;
+    background-color: rgb(240,240,240);
+    font-family: "PlayfairDisplay";
+    font-size: 14px;
+}
+
+/* footer */
+#footer .terms {
+    float: left;
+    margin-right: 20px;
+}
+
+#footer .privacy {
+    float: left;
+}
+
+#footer .follow {
+    float: right;
 }

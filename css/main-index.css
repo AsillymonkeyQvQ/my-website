@@ -1,23 +1,24 @@
-.index-container .content-type {
+#main-index .content-type {
     line-height: 20px;
     font-family: "Ubuntu";
     font-size: 14px;
     color: rgb(180, 173, 158);
 }
 
-.index-container .content-heading {
+#main-index .content-heading {
     height: 80px;
     line-height: 80px;
 }
 
-.index-container .content-heading a {
+#main-index .content-heading a {
     text-decoration: none;
     font-family: "NotoSerifSC";
     font-size: 30px;
+    font-weight: 500;
     color: rgb(98, 98, 98);
 }
 
-.index-container .content-body {
+#main-index .content-body {
     line-height: 20px;
     font-family: "NotoSerifSC";
     font-size: 14px;
@@ -26,21 +27,21 @@
     overflow: hidden;
 }
 
-.index-container .topic img {
+#main-index .topic img {
     width: 1062px;
     height: 675px;
 }
 
-.index-container .topic .topic-content-wapper {
+#main-index .topic .topic-content-wapper {
     margin-top: 70px;
     padding: 0 81px;
 }
 
-.index-container .topic .topic-content-wapper .content-body {
+#main-index .topic .topic-content-wapper .content-body {
     height: 120px;
 }
 
-.index-container .topic .topic-content-wapper .etc {
+#main-index .topic .topic-content-wapper .etc {
     height: 20px;
     line-height: 20px;
     font-family: "NotoSerifSC";
@@ -48,43 +49,43 @@
     color: rgb(98, 98, 98);
 }
 
-.index-container .pieces {
+#main-index .pieces {
     margin-top: 120px;
     padding: 0 81px;
 }
 
-.index-container .pieces .piece {
+#main-index .pieces .piece {
     width: 421px;
     height: 480px;
     float: left;
     margin-bottom: 120px;
 }
 
-.index-container .pieces .piece:nth-child(odd) {
+#main-index .pieces .piece:nth-child(odd) {
     margin-right: 58px;
 }
 
-.index-container .pieces .piece img {
+#main-index .pieces .piece img {
     width: 421px;
     height: 279px;
 }
 
-.index-container .pieces .piece .piece-content-wapper {
+#main-index .pieces .piece .piece-content-wapper {
     margin-top: 30px;
 }
 
-.index-container .pieces .piece .piece-content-wapper .content-body {
+#main-index .pieces .piece .piece-content-wapper .content-body {
     height: 60px;
 }
 
-.index-container .newsletter {
+#main-index .newsletter {
     clear: both;
     height: 280px;
     background-color: rgb(240, 240, 240);
     padding-top: 50px;
 }
 
-.index-container .newsletter p {
+#main-index .newsletter p {
     height: 70px;
     line-height: 70px;
     font-family: "PlayfairDisplay";
@@ -93,14 +94,14 @@
     text-align: center;
 }
 
-.index-container .newsletter .email {
+#main-index .newsletter .email {
     width: 400px;
     height: 40px;
     margin: 20px auto;
     border-bottom: 1px solid rgb(0, 0, 0);
 }
 
-.index-container .newsletter .email-input {
+#main-index .newsletter .email-input {
     height: 40px;
     float: left;
     padding-left: 5px;
@@ -110,7 +111,7 @@
     color: rgb(98, 98, 98);
 }
 
-.index-container .newsletter .email-submit {
+#main-index .newsletter .email-submit {
     height: 40px;
     float: right;
     padding-right: 5px;
@@ -123,11 +124,11 @@
 .more {
     clear: both;
     height: 280px;
-    padding-top: 110px;
-    padding-left: 448px;
+    padding: 110px 0;
 }
 
 .more .load-more {
+    display: block;
     width: 166px;
     height: 60px;
     margin: 0 auto;

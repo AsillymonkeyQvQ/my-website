@@ -1,16 +1,16 @@
-#main-index .content-type {
+#main-homepage .content-type {
     line-height: 20px;
     font-family: "Ubuntu";
     font-size: 14px;
     color: rgb(180, 173, 158);
 }
 
-#main-index .content-heading {
+#main-homepage .content-heading {
     height: 80px;
     line-height: 80px;
 }
 
-#main-index .content-heading a {
+#main-homepage .content-heading a {
     text-decoration: none;
     font-family: "NotoSerifSC";
     font-size: 30px;
@@ -18,7 +18,7 @@
     color: rgb(98, 98, 98);
 }
 
-#main-index .content-body {
+#main-homepage .content-body {
     line-height: 20px;
     font-family: "NotoSerifSC";
     font-size: 14px;
@@ -27,21 +27,21 @@
     overflow: hidden;
 }
 
-#main-index .topic img {
+#main-homepage .topic img {
     width: 1062px;
     height: 675px;
 }
 
-#main-index .topic .topic-content-wapper {
+#main-homepage .topic .topic-content-wapper {
     margin-top: 70px;
     padding: 0 81px;
 }
 
-#main-index .topic .topic-content-wapper .content-body {
+#main-homepage .topic .topic-content-wapper .content-body {
     height: 120px;
 }
 
-#main-index .topic .topic-content-wapper .etc {
+#main-homepage .topic .topic-content-wapper .etc {
     height: 20px;
     line-height: 20px;
     font-family: "NotoSerifSC";
@@ -49,43 +49,43 @@
     color: rgb(98, 98, 98);
 }
 
-#main-index .pieces {
+#main-homepage .pieces {
     margin-top: 120px;
     padding: 0 81px;
 }
 
-#main-index .pieces .piece {
+#main-homepage .pieces .piece {
     width: 421px;
     height: 480px;
     float: left;
     margin-bottom: 120px;
 }
 
-#main-index .pieces .piece:nth-child(odd) {
+#main-homepage .pieces .piece:nth-child(odd) {
     margin-right: 58px;
 }
 
-#main-index .pieces .piece img {
+#main-homepage .pieces .piece img {
     width: 421px;
     height: 279px;
 }
 
-#main-index .pieces .piece .piece-content-wapper {
+#main-homepage .pieces .piece .piece-content-wapper {
     margin-top: 30px;
 }
 
-#main-index .pieces .piece .piece-content-wapper .content-body {
+#main-homepage .pieces .piece .piece-content-wapper .content-body {
     height: 60px;
 }
 
-#main-index .newsletter {
+#main-homepage .newsletter {
     clear: both;
     height: 280px;
     background-color: rgb(240, 240, 240);
     padding-top: 50px;
 }
 
-#main-index .newsletter p {
+#main-homepage .newsletter p {
     height: 70px;
     line-height: 70px;
     font-family: "PlayfairDisplay";
@@ -94,14 +94,14 @@
     text-align: center;
 }
 
-#main-index .newsletter .email {
+#main-homepage .newsletter .email {
     width: 400px;
     height: 40px;
     margin: 20px auto;
     border-bottom: 1px solid rgb(0, 0, 0);
 }
 
-#main-index .newsletter .email-input {
+#main-homepage .newsletter .email-input {
     height: 40px;
     float: left;
     padding-left: 5px;
@@ -111,7 +111,7 @@
     color: rgb(98, 98, 98);
 }
 
-#main-index .newsletter .email-submit {
+#main-homepage .newsletter .email-submit {
     height: 40px;
     float: right;
     padding-right: 5px;

@@ -30,16 +30,14 @@
 body {
     width: 1200px;
     margin: 0 auto;
-    padding-left: 69px;
-    padding-right: 69px;
 }
 
 /* header */
 #header {
     width: 1062px;
     height: 150px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    margin: 0 auto;
+    padding: 50px 0px;
 }
 
 #header .logo {
@@ -83,7 +81,8 @@ body {
 
 #footer {
     height: 100px;
-    padding: 40px 70px 40px 150px;
+    margin-top: 100px;
+    padding: 40px 139px 40px 219px;
     background-color: rgb(240,240,240);
     font-family: "PlayfairDisplay";
     font-size: 14px;

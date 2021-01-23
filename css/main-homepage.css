@@ -27,21 +27,25 @@
     overflow: hidden;
 }
 
+#main-homepage .topic {
+    padding: 0 69px;
+}
+
 #main-homepage .topic img {
     width: 1062px;
     height: 675px;
 }
 
-#main-homepage .topic .topic-content-wapper {
+#main-homepage .topic .topic-content-wrapper {
     margin-top: 70px;
     padding: 0 81px;
 }
 
-#main-homepage .topic .topic-content-wapper .content-body {
+#main-homepage .topic .topic-content-wrapper .content-body {
     height: 120px;
 }
 
-#main-homepage .topic .topic-content-wapper .etc {
+#main-homepage .topic .topic-content-wrapper .etc {
     height: 20px;
     line-height: 20px;
     font-family: "NotoSerifSC";
@@ -51,7 +55,7 @@
 
 #main-homepage .pieces {
     margin-top: 120px;
-    padding: 0 81px;
+    padding: 0 150px;
 }
 
 #main-homepage .pieces .piece {
@@ -70,11 +74,11 @@
     height: 279px;
 }
 
-#main-homepage .pieces .piece .piece-content-wapper {
+#main-homepage .pieces .piece .piece-content-wrapper {
     margin-top: 30px;
 }
 
-#main-homepage .pieces .piece .piece-content-wapper .content-body {
+#main-homepage .pieces .piece .piece-content-wrapper .content-body {
     height: 60px;
 }
 
@@ -121,13 +125,13 @@
     cursor: pointer;
 }
 
-.more {
+#main-homepage .more {
     clear: both;
     height: 280px;
     padding: 110px 0;
 }
 
-.more .load-more {
+#main-homepage .more .load-more {
     display: block;
     width: 166px;
     height: 60px;
@@ -143,7 +147,7 @@
     transition-duration: 0.5s;
 }
 
-.more .load-more:hover {
+#main-homepage .more .load-more:hover {
     background-color: rgb(54, 54, 54);
     color: rgb(255, 255, 255);
 }

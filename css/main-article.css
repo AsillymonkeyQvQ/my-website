@@ -1,0 +1,153 @@
+#main-article .article {
+    padding: 0 69px;
+}
+
+#main-article .article img {
+    width: 1062px;
+    height: 675px;
+}
+
+#main-article .article .content-wrapper {
+    margin-top: 70px;
+    padding: 0 81px;
+}
+
+#main-article .article .content-wrapper .content-type {
+    line-height: 20px;
+    font-family: "Ubuntu";
+    font-size: 14px;
+    color: rgb(180, 173, 158);
+}
+
+#main-article .article .content-wrapper .content-heading {
+    height: 80px;
+    line-height: 80px;
+    font-family: "NotoSerifSC";
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(98, 98, 98);
+}
+
+#main-article .article .content-wrapper .content-body {
+    line-height: 20px;
+    font-family: "NotoSerifSC";
+    font-size: 14px;
+    color: rgb(98, 98, 98);
+    text-align: justify;
+}
+
+#main-article .relations {
+    height: 435px;
+    padding: 60px 150px 85px;
+    margin-top: 50px;
+    background-color: rgb(240, 240, 240);
+}
+
+#main-article .relations .type {
+    height: 20px;
+    line-height: 20px;
+    color: rgb(180, 173, 158);
+    font-family: "Ubuntu";
+    font-size: 14px;
+}
+
+#main-article .relations .relation {
+    float: left;
+    width: 275px;
+    height: 290px;
+    margin-right: 37.5px;
+    padding-top: 30px;
+    cursor: pointer;
+}
+
+#main-article .relations .relation:last-child {
+    margin-right: 0px;
+}
+
+#main-article .relations .relation img {
+    width: 275px;
+    height: 192px;
+}
+
+#main-article .relations .relation h2 {
+    font-family: "NotoSerifSC";
+    font-size: 20px;
+    font-weight: normal;
+    color: rgb(98, 98, 98);
+}
+
+#main-article .comments {
+    margin-top: 50px;
+    padding: 0 150px;
+}
+
+#main-article .comments .type {
+    height: 20px;
+    line-height: 20px;
+    color: rgb(180, 173, 158);
+    font-family: "Ubuntu";
+    font-size: 14px;
+}
+
+#main-article .comments .comment, #main-article .comments .comment-add {
+    height: 150px;
+    padding: 15px 0;
+}
+
+#main-article .comments .profile-picture-wrapper {
+    float: left;
+    height: 120px;
+    width: 100px;
+    padding: 0 10px 40px;
+}
+
+#main-article .comments .profile-picture-wrapper .profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    text-align: center;
+    line-height: 80px;
+    font-family: "Ubuntu";
+    color: rgb(255,255,255);
+    font-size: 34px;
+}
+
+#main-article .comments .comment:nth-child(even) .profile-picture-wrapper .profile-picture {
+    background-color: rgb(202, 229, 224);
+}
+
+#main-article .comments .comment:nth-child(odd) .profile-picture-wrapper .profile-picture {
+    background-color: rgb(129, 199, 212);
+}
+
+#main-article .comments .comment .nickname {
+    margin-left: 120px;
+    color: rgb(98, 98, 98);
+    font-family: "PlayfairDisplay";
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#main-article .comments .comment .content {
+    margin-top: 10px;
+    margin-left: 120px;
+    color: rgb(98, 98, 98);
+    font-family: "NotoSerifSC";
+    font-size: 14px;
+}
+
+#main-article .comments .comment-add .profile-picture-wrapper .profile-picture {
+    background-color: rgb(237, 237, 234);
+}
+
+#main-article .comments .comment-add .comment-input {
+    height: 80px;
+    margin-left: 120px;
+    padding: 10px 30px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+    line-height: 60px;
+    color: rgb(200, 200, 200);
+    font-family: "Ubuntu";
+    font-size: 14px;
+}

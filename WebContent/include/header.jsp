@@ -1,4 +1,11 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="com.sunzehai.mywebsite.model.database.Category" %>
+
+<%
+	@SuppressWarnings("unchecked")
+	List<Category> categorys = (List<Category>)application.getAttribute("categorys");
+%>
 
 <header id="header">
     <div class="logo">
@@ -6,10 +13,13 @@
     </div>
     <nav class="navigation">
         <ul>
-            <li><a href="<%= request.getContextPath() %>/category/LIFESTYLE">LIFESTYLE</a></li>
-            <li><a href="<%= request.getContextPath() %>/category/TECHNOLOGY">TECHNOLOGY</a></li>
-            <li><a href="<%= request.getContextPath() %>/category/JAPANESE">JAPANESE</a></li>
-            <li><a href="<%= request.getContextPath() %>/category/ANIMATION">ANIMATION</a></li>
+	<%
+		for(Category category : categorys) {
+	%>
+			<li><a href="<%= request.getContextPath() %>/category/<%=category.getName() %>"><%=category.getName() %></a></li>
+	<%
+		}
+	%>
         </ul>
     </nav>
 </header>

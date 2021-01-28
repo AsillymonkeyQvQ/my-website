@@ -5,16 +5,29 @@
   <welcome-file-list>
   	<welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+
+  <!-- context parameter -->
+  <context-param>
+  	<param-name>copyright</param-name>
+  	<param-value>© 2021 SunZehai</param-value>
+  </context-param>
   
+  <!-- servlet -->
   <servlet>
   	<servlet-name>ServletContextInitializer</servlet-name>
   	<servlet-class>com.sunzehai.mywebsite.servlet.initializer.ServletContextInitializer</servlet-class>
   	<load-on-startup>0</load-on-startup>
   </servlet>
   
-  <context-param>
-  	<param-name>copyright</param-name>
-  	<param-value>© 2021 SunZehai</param-value>
-  </context-param>
+  <!-- error page -->
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error/404.html</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/error/500.html</location>
+  </error-page>
   
 </web-app>

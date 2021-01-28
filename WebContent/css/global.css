@@ -79,22 +79,17 @@ body {
     font-size: 14px;
 }
 
+/* footer */
 #footer {
     height: 100px;
     margin-top: 100px;
     padding: 40px 139px 40px 219px;
     background-color: rgb(240,240,240);
-    font-family: "PlayfairDisplay";
+    font-family: "Arial";
     font-size: 14px;
 }
 
-/* footer */
-#footer .terms {
-    float: left;
-    margin-right: 20px;
-}
-
-#footer .privacy {
+#footer .copyright {
     float: left;
 }
 

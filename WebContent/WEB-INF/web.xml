@@ -12,4 +12,9 @@
   	<load-on-startup>0</load-on-startup>
   </servlet>
   
+  <context-param>
+  	<param-name>copyright</param-name>
+  	<param-value>© 2021 SunZehai</param-value>
+  </context-param>
+  
 </web-app>

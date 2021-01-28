@@ -87,6 +87,7 @@ body {
     background-color: rgb(240,240,240);
     font-family: "Arial";
     font-size: 14px;
+    clear: both;
 }
 
 #footer .copyright {

@@ -9,14 +9,14 @@
 
 <header id="header">
     <div class="logo">
-        <a href="<%= request.getContextPath() %>">Asillymonkey</a>
+        <a href="${pageContext.request.contextPath}">Asillymonkey</a>
     </div>
     <nav class="navigation">
         <ul>
 	<%
 		for(Category category : categorys) {
 	%>
-			<li><a href="<%= request.getContextPath() %>/category/<%=category.getName() %>"><%=category.getName() %></a></li>
+			<li><a href="${pageContext.request.contextPath}/category/<%=category.getName() %>"><%=category.getName() %></a></li>
 	<%
 		}
 	%>

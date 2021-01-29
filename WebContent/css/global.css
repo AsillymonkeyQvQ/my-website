@@ -92,8 +92,34 @@ body {
 
 #footer .copyright {
     float: left;
+    height: 20px;
+    line-height: 20px;
 }
 
 #footer .follow {
     float: right;
+}
+
+#footer .follow span {
+	display: block;
+	height: 20px;
+	float: left;
+	line-height: 20px;
+}
+
+#footer .follow ul {
+	height: 20px;
+	float: left;
+	margin-left: 15px;
+}
+
+#footer .follow ul li {
+	display: inline-block;
+	height: 20px;
+	margin-right: 10px;
+	line-height: 20px;
+}
+
+#footer .follow ul li:last-child {
+	margin-right: 0;
 }

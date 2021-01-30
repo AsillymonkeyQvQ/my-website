@@ -1,90 +1,53 @@
-#main-homepage .content-type {
-    line-height: 20px;
-    font-family: "Ubuntu";
-    font-size: 14px;
-    color: rgb(180, 173, 158);
-}
-
-#main-homepage .content-heading {
-    height: 80px;
-    line-height: 80px;
-}
-
-#main-homepage .content-heading a {
-    text-decoration: none;
-    font-family: "NotoSerifSC";
-    font-size: 30px;
-    font-weight: 500;
-    color: rgb(98, 98, 98);
-}
-
-#main-homepage .content-body {
-    line-height: 20px;
-    font-family: "NotoSerifSC";
-    font-size: 14px;
-    color: rgb(98, 98, 98);
-    text-align: justify;
-    overflow: hidden;
-}
-
 #main-homepage .topic {
-    padding: 0 69px;
+    width: 1062px;
+    margin: 0 auto 120px;
 }
 
-#main-homepage .topic img {
+#main-homepage .topic .article {
+	cursor: pointer;
+}
+
+#main-homepage .topic .article img {
     width: 1062px;
     height: 675px;
 }
 
-#main-homepage .topic .topic-content-wrapper {
+#main-homepage .topic .article .article-content-wrapper {
     margin-top: 70px;
     padding: 0 81px;
 }
 
-#main-homepage .topic .topic-content-wrapper .content-body {
-    height: 120px;
+#main-homepage .topic .article .article-content-wrapper .article-category {
+	height: 20px;
+	line-height: 20px;
+	color: rgb(180, 173, 158);
+    font-family: "Ubuntu";
+    font-size: 14px;
 }
 
-#main-homepage .topic .topic-content-wrapper .etc {
-    height: 20px;
-    line-height: 20px;
+#main-homepage .topic .article .article-content-wrapper .article-title {
+	height: 80px;
+	line-height: 80px;
+	color: rgb(98, 98, 98);
+    font-family: "NotoSerifSC";
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#main-homepage .topic .article .article-content-wrapper .article-description {
+	height: 60px;
+	line-height: 20px;
+	color: rgb(98, 98, 98);
     font-family: "NotoSerifSC";
     font-size: 14px;
-    color: rgb(98, 98, 98);
-}
-
-#main-homepage .articles {
-    margin-top: 120px;
-    padding: 0 150px;
-}
-
-#main-homepage .articles .article {
-    width: 421px;
-    height: 480px;
-    float: left;
-    margin-bottom: 120px;
-}
-
-#main-homepage .articles .article:nth-child(odd) {
-    margin-right: 58px;
-}
-
-#main-homepage .articles .article img {
-    width: 421px;
-    height: 279px;
-}
-
-#main-homepage .articles .article .article-content-wrapper {
-    margin-top: 30px;
-}
-
-#main-homepage .articles .article .article-content-wrapper .content-body {
-    height: 60px;
+    text-align: justify;
+    overflow: hidden;
 }
 
 #main-homepage .newsletter {
     clear: both;
     height: 280px;
+    margin-bottom: 120px;
     background-color: rgb(240, 240, 240);
     padding-top: 50px;
 }

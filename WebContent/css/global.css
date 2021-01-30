@@ -26,6 +26,10 @@
     box-sizing: border-box;
 }
 
+#ctx {
+	display: none;
+}
+
 /* body */
 body {
     width: 1200px;
@@ -82,7 +86,6 @@ body {
 /* footer */
 #footer {
     height: 100px;
-    margin-top: 100px;
     padding: 40px 139px 40px 219px;
     background-color: rgb(240,240,240);
     font-family: "Arial";
@@ -122,4 +125,58 @@ body {
 
 #footer .follow ul li:last-child {
 	margin-right: 0;
+}
+
+/* articles */
+.articles {
+	width: 900px;
+	margin: 0 auto;
+}
+
+.articles .article {
+	float: left;
+	width: 421px;
+    height: 480px;
+    margin-bottom: 120px;
+    cursor: pointer;
+}
+
+.articles .article:nth-child(odd) {
+    margin-right: 58px;
+}
+
+.articles .article img {
+	width: 421px;
+	height: 279px;
+}
+
+.articles .article .article-content-wrapper {
+	margin-top: 30px;
+}
+
+.articles .article .article-content-wrapper .article-category {
+	height: 20px;
+	line-height: 20px;
+	color: rgb(180, 173, 158);
+    font-family: "Ubuntu";
+    font-size: 14px;
+}
+
+.articles .article .article-content-wrapper .article-title {
+	height: 80px;
+	line-height: 80px;
+	color: rgb(98, 98, 98);
+    font-family: "NotoSerifSC";
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.articles .article .article-content-wrapper .article-description {
+	height: 60px;
+	line-height: 20px;
+	color: rgb(98, 98, 98);
+    font-family: "NotoSerifSC";
+    font-size: 14px;
+    text-align: justify;
+    overflow: hidden;
 }

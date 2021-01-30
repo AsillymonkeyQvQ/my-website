@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="${contextPath}/css/global.css"/>
         <link rel="stylesheet" type="text/css" href="${contextPath}/css/main-homepage.css">
         <link rel="stylesheet" type="text/css" href="${contextPath}/css/font-awesome.css">
+        <script type="text/javascript" src="${contextPath}/js/homepage.js"></script>
         <title>孙泽海的个人网站主页</title>
     </head>
     <body>
@@ -20,26 +21,13 @@
 		<main id="main-homepage">
 			<section class="topic">
 				<c:forEach var="article" items="${applicationScope.articles}" begin="0" end="0">
-					<img src="${contextPath}/images/${article.id}.jpg"/>
-					<div class="topic-content-wrapper">
-	                   <div class="content-type">${article.category}</div>
-	                   <h1 class="content-heading"><a href="${contextPath}/article/${article.id}">${article.title}</a></h1>
-	                   <p class="content-body">${article.description}</p>
-	                   <p class="etc">...</p>
-		            </div>
-			    </c:forEach>
+					<%@ include file="include/article.jsp" %>
+				</c:forEach>
 			</section>
 			
 			<section class="articles">
 				<c:forEach var="article" items="${applicationScope.articles}" begin="1" end="4">
-					<article class="article">
-	                    <img src="${contextPath}/images/${article.id}.jpg"/>
-	                    <div class="article-content-wrapper">
-	                        <div class="content-type">${article.category}</div>
-	                    <h1 class="content-heading"><a href="${contextPath}/article/${article.id}">${article.title}</a></h1>
-	                    <p class="content-body">${article.description}</p>
-	                    </div>
-	                </article>
+					<%@ include file="include/article.jsp" %>
 				</c:forEach>
             </section>
             
@@ -53,14 +41,7 @@
             
             <section class="articles">
 				<c:forEach var="article" items="${applicationScope.articles}" begin="5" end="6">
-					<article class="article">
-	                    <img src="${contextPath}/images/${article.id}.jpg"/>
-	                    <div class="article-content-wrapper">
-	                        <div class="content-type">${article.category}</div>
-	                    <h1 class="content-heading"><a href="${contextPath}/article/${article.id}">${article.title}</a></h1>
-	                    <p class="content-body">${article.description}</p>
-	                    </div>
-	                </article>
+					<%@ include file="include/article.jsp" %>
 				</c:forEach>
             </section>
             
@@ -70,6 +51,9 @@
 		</main>
 		
 		<!-- footer -->
-		<%@ include file="include/footer.jsp"%>	
+		<%@ include file="include/footer.jsp"%>
+		
+		<!-- hidden area -->
+		<span id="ctx">${contextPath}</span>
     </body>
 </html>

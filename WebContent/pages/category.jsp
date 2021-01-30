@@ -19,7 +19,7 @@
 		<!-- main -->
 		<main id="main-category">
 			<section class="articles">
-				<c:forEach var="article" items="${applicationScope.articles}">
+				<c:forEach var="article" items="${requestScope.articles}">
 					<%@ include file="../include/article.jsp" %>
 				</c:forEach>
 			</section>

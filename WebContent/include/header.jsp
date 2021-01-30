@@ -3,11 +3,11 @@
 
 <header id="header">
     <div class="logo">
-        <a href="${contextPath}">Asillymonkey</a>
+        <a href="${initParam.home}">Asillymonkey</a>
     </div>
     <nav class="navigation">
         <ul>
-        	<c:forEach var="category" items="${applicationScope.categorys}">
+        	<c:forEach var="category" items="${applicationScope.categories}">
         		<li><a href="${contextPath}/category/${category.name}">${category.name}</a></li>
         	</c:forEach>
         </ul>

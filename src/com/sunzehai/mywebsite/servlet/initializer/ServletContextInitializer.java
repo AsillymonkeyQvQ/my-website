@@ -20,13 +20,13 @@ public class ServletContextInitializer extends HttpServlet {
 		
 		ServletContext context = this.getServletContext();
 		
-		List<Category> categorys = Arrays.asList(
+		List<Category> categories = Arrays.asList(
 			new Category(1, "LIFESTYLE", ""),
 			new Category(2, "TECHNOLOGY", ""),
 			new Category(3, "JAPANESE", ""),
 			new Category(4, "ANIMATION", "")
 		);
-		context.setAttribute("categorys", categorys);
+		context.setAttribute("categories", categories);
 		
 		List<Article> articles = Arrays.asList(
 			new Article("ARTICLE0001", "午后的清澄庭园", "LIFESTYLE", "测试文本", 0, LocalDateTime.now()),

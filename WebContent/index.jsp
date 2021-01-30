@@ -1,21 +1,15 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="java.util.*" %>
-<%@ page import="com.sunzehai.mywebsite.model.database.Article" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%
-	@SuppressWarnings("unchecked")
-	List<Article> articles = (List<Article>)application.getAttribute("articles");
-	Iterator<Article> iterator = articles.iterator();
-	Article article = iterator.next();
-%>
+<c:set var="contextPath" scope="page" value="${pageContext.request.contextPath}"></c:set>
 
 <!DOCTYPE html>
 <html>
 	<head>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/global.css"/>
-        <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/main-homepage.css">
-        <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="${contextPath}/css/global.css"/>
+        <link rel="stylesheet" type="text/css" href="${contextPath}/css/main-homepage.css">
+        <link rel="stylesheet" type="text/css" href="${contextPath}/css/font-awesome.css">
         <title>孙泽海的个人网站主页</title>
     </head>
     <body>
@@ -25,33 +19,28 @@
 		<!-- main -->
 		<main id="main-homepage">
 			<section class="topic">
-				<img src="<%=request.getContextPath() %>/images/<%=article.getId() %>.jpg"/>
-				<div class="topic-content-wrapper">
-                    <div class="content-type"><%=article.getCategory() %></div>
-                    <h1 class="content-heading"><a href="<%=request.getContextPath() + "/article/" + article.getId() %>"><%=article.getTitle() %></a></h1>
-                    <p class="content-body"><%=article.getDescription() %></p>
-                    <p class="etc">...</p>
-                </div>
+				<c:forEach var="article" items="${applicationScope.articles}" begin="0" end="0">
+					<img src="${contextPath}/images/${article.id}.jpg"/>
+					<div class="topic-content-wrapper">
+	                   <div class="content-type">${article.category}</div>
+	                   <h1 class="content-heading"><a href="${contextPath}/article/${article.id}">${article.title}</a></h1>
+	                   <p class="content-body">${article.description}</p>
+	                   <p class="etc">...</p>
+		            </div>
+			    </c:forEach>
 			</section>
 			
-			<section class="pieces">
-			<%
-				for (int i = 0; i < 4; i++) {
-					if (iterator.hasNext()) {
-						article = iterator.next();
-			%>
-				<div class="piece">
-                    <img src="<%=request.getContextPath() %>/images/<%=article.getId() %>.jpg"/>
-                    <div class="piece-content-wrapper">
-                        <div class="content-type"><%=article.getCategory() %></div>
-                    <h1 class="content-heading"><a href="<%=request.getContextPath() + "/article/" + article.getId() %>"><%=article.getTitle() %></a></h1>
-                    <p class="content-body"><%=article.getDescription() %></p>
-                    </div>
-                </div>
-			<%
-					}
-				}
-			%>
+			<section class="articles">
+				<c:forEach var="article" items="${applicationScope.articles}" begin="1" end="4">
+					<article class="article">
+	                    <img src="${contextPath}/images/${article.id}.jpg"/>
+	                    <div class="article-content-wrapper">
+	                        <div class="content-type">${article.category}</div>
+	                    <h1 class="content-heading"><a href="${contextPath}/article/${article.id}">${article.title}</a></h1>
+	                    <p class="content-body">${article.description}</p>
+	                    </div>
+	                </article>
+				</c:forEach>
             </section>
             
             <section class="newsletter">
@@ -62,24 +51,17 @@
                 </div>
             </section>
             
-            <section class="pieces">
-			<%
-				for (int i = 0; i < 2; i++) {
-					if (iterator.hasNext()) {
-						article = iterator.next();
-			%>
-				<div class="piece">
-                    <img src="<%=request.getContextPath() %>/images/<%=article.getId() %>.jpg"/>
-                    <div class="piece-content-wrapper">
-                        <div class="content-type"><%=article.getCategory() %></div>
-                    <h1 class="content-heading"><a href="<%=request.getContextPath() + "/article/" + article.getId() %>"><%=article.getTitle() %></a></h1>
-                    <p class="content-body"><%=article.getDescription() %></p>
-                    </div>
-                </div>
-			<%
-					}
-				}
-			%>
+            <section class="articles">
+				<c:forEach var="article" items="${applicationScope.articles}" begin="5" end="6">
+					<article class="article">
+	                    <img src="${contextPath}/images/${article.id}.jpg"/>
+	                    <div class="article-content-wrapper">
+	                        <div class="content-type">${article.category}</div>
+	                    <h1 class="content-heading"><a href="${contextPath}/article/${article.id}">${article.title}</a></h1>
+	                    <p class="content-body">${article.description}</p>
+	                    </div>
+	                </article>
+				</c:forEach>
             </section>
             
             <section class="more">

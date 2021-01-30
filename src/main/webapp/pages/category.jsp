@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="${contextPath}/css/main-category.css"/>
 		<link rel="stylesheet" type="text/css" href="${contextPath}/css/font-awesome.css"/>
 		<script type="text/javascript" src="${contextPath}/js/category.js"></script>
-		<title></title>
+		<title>${requestScope.category}</title>
 	</head>
 	<body>
 		<!-- header -->

@@ -1,0 +1,11 @@
+#main-article .markdown-body {
+	width: 980px;
+	margin: 0 auto;
+	padding: 45px;
+}
+
+@media (max-width: 767px) {
+	#main-article .markdown-body {
+		padding: 15px;
+	}	
+}

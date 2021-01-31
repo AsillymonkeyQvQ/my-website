@@ -8,8 +8,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 
-import com.sunzehai.mywebsite.model.database.Article;
-import com.sunzehai.mywebsite.model.database.Category;
+import com.sunzehai.mywebsite.model.Article;
+import com.sunzehai.mywebsite.model.Category;
 
 public class ServletContextInitializer extends HttpServlet {
 	

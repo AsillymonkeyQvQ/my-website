@@ -1,4 +1,4 @@
-package com.sunzehai.mywebsite.model.database;
+package com.sunzehai.mywebsite.model;
 
 import java.time.LocalDateTime;
 

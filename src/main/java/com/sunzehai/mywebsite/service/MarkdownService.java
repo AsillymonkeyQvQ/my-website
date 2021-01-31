@@ -11,7 +11,7 @@ import javax.servlet.ServletContext;
 
 import org.pegdown.PegDownProcessor;
 
-import com.sunzehai.mywebsite.model.database.Article;
+import com.sunzehai.mywebsite.model.Article;
 
 public class MarkdownService {
 	

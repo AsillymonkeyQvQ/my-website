@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sunzehai.mywebsite.exception.NotFoundException;
-import com.sunzehai.mywebsite.model.database.Article;
+import com.sunzehai.mywebsite.model.Article;
 import com.sunzehai.mywebsite.service.MarkdownService;
 
 @WebServlet("/article/*")

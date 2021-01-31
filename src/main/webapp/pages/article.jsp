@@ -18,9 +18,12 @@
 		
 		<!-- main -->
 		<main id="main-article">
-			<article class="markdown-body">
-				${html}
-			</article>
+			<section class="article-wrapper">
+				<img alt="${requestScope.article.title}" src="${contextPath}/images/${requestScope.article.id}.jpg">
+				<article class="markdown-body">
+					${html}
+				</article>
+			</section>
 		</main>
 		
 		<!-- footer -->

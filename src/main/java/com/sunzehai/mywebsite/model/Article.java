@@ -1,6 +1,6 @@
 package com.sunzehai.mywebsite.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class Article {
 	
@@ -14,15 +14,19 @@ public class Article {
 	
 	private Integer stars;
 	
-	private LocalDateTime createDateTime;
+	private LocalDate createDate;
+	
+	public Article() {
+		
+	}
 
-	public Article(String id, String title, String category, String description, Integer stars, LocalDateTime createDateTime) {
+	public Article(String id, String title, String category, String description, Integer stars, LocalDate createDate) {
 		this.id = id;
 		this.title = title;
 		this.category = category;
 		this.description = description;
 		this.stars = stars;
-		this.createDateTime = createDateTime;
+		this.createDate = createDate;
 	}
 
 	public String getId() {
@@ -65,12 +69,12 @@ public class Article {
 		this.stars = stars;
 	}
 
-	public LocalDateTime getCreateDateTime() {
-		return createDateTime;
+	public LocalDate getCreateDate() {
+		return createDate;
 	}
 
-	public void setCreateDateTime(LocalDateTime createDateTime) {
-		this.createDateTime = createDateTime;
+	public void setCreateDate(LocalDate createDate) {
+		this.createDate = createDate;
 	}
 	
 }

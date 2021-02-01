@@ -1,8 +1,10 @@
 CREATE TABLE article (
-    id CHAR(11) NOT NULL
-  , title CHAR(128) NOT NULL
-  , category CHAR(30) NOT NULL
-  , description TEXT NULL
-  , stars INTEGER NULL
-  , create_date DATE NOT NULL
-);
+    id                  INT                 NOT NULL
+  , authorId            INT                 NOT NULL
+  , categoryId          INT                 NOT NULL
+  , title               VARCHAR(75)         NOT NULL
+  , summary             TINYTEXT            NOT NULL
+  , published           CHAR(1)             NOT NULL
+  , createDate          DATE                NOT NULL
+  , PRIMARY KEY (id)
+)

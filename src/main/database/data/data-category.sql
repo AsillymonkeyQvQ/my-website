@@ -1,4 +1,4 @@
-INSERT INTO category(id, name, description) VALUES(1, 'LIFESTYLE', '');
-INSERT INTO category(id, name, description) VALUES(2, 'TECHNOLOGY', '');
-INSERT INTO category(id, name, description) VALUES(3, 'JAPANESE', '');
-INSERT INTO category(id, name, description) VALUES(4, 'ANIMATION', '');
+INSERT INTO category(id, name, description, parent_id) VALUES(1, 'LIFESTYLE', '', 0);
+INSERT INTO category(id, name, description, parent_id) VALUES(2, 'TECHNOLOGY', '', 0);
+INSERT INTO category(id, name, description, parent_id) VALUES(3, 'JAPANESE', '', 0);
+INSERT INTO category(id, name, description, parent_id) VALUES(4, 'ANIMATION', '', 0);

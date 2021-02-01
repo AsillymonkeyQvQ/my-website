@@ -4,5 +4,5 @@ CREATE TABLE article (
   , category CHAR(30) NOT NULL
   , description TEXT NULL
   , stars INTEGER NULL
-  , create_date_time DATETIME NOT NULL
+  , create_date DATE NOT NULL
 );

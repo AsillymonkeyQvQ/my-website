@@ -27,7 +27,7 @@ public class ArticleDao implements AutoCloseable {
 	public List<Article> findAll() throws SQLException {
 		List<Article> articles = new ArrayList<>();
 		
-		sql = "SELECT id, title, category, description, stars, create_date_time FROM article ORDER BY id;";
+		sql = "SELECT id, title, category, description, stars, create_date FROM article ORDER BY id;";
 		ptmt = conn.prepareStatement(sql);
 		rs = ptmt.executeQuery();
 		
@@ -38,7 +38,7 @@ public class ArticleDao implements AutoCloseable {
 			article.setCategory(rs.getString("category"));
 			article.setDescription(rs.getString("description"));
 			article.setStars(rs.getInt("stars"));
-			article.setCreateDate(rs.getDate("create_date_time").toLocalDate());
+			article.setCreateDate(rs.getDate("create_date").toLocalDate());
 			
 			articles.add(article);
 		}
@@ -49,7 +49,7 @@ public class ArticleDao implements AutoCloseable {
 	public Article findById(String id) throws SQLException {
 		Article article = new Article();
 		
-		sql = "SELECT id, title, category, description, stars, create_date_time FROM article WHERE id = ?;";
+		sql = "SELECT id, title, category, description, stars, create_date FROM article WHERE id = ?;";
 		ptmt = conn.prepareStatement(sql);
 		ptmt.setString(1, id);
 		rs = ptmt.executeQuery();
@@ -60,7 +60,7 @@ public class ArticleDao implements AutoCloseable {
 			article.setCategory(rs.getString("category"));
 			article.setDescription(rs.getString("description"));
 			article.setStars(rs.getInt("stars"));
-			article.setCreateDate(rs.getDate("create_date_time").toLocalDate());
+			article.setCreateDate(rs.getDate("create_date").toLocalDate());
 		}
 		
 		return article;

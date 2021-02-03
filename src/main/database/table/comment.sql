@@ -5,4 +5,5 @@ CREATE TABLE comment(
   , published           CHAR(1)             NOT NULL
   , createdAt           DATETIME            NOT NULL
   , content             TEXT                NOT NULL
+  , PRIMARY KEY (id)
 );

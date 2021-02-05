@@ -6,17 +6,14 @@ import java.sql.Connection;
 
 import org.junit.Test;
 
-public class DBUtilTest {
-
+public class JdbcUtilsTest {
+	
 	@Test
 	public void testGetConnection() throws Exception {
-		Connection conn = DBUtil.getInstance().getConnection();
-		
-		assertNotNull(conn);
-		
-		System.out.println(conn.getMetaData().getDatabaseProductName());
-		
-		conn.close();
+		try(Connection conn = JdbcUtils.getConnection()) {
+			assertNotNull(conn);
+			System.out.println(conn);
+		}
 	}
-
+	
 }

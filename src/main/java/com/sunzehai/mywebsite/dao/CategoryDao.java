@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sunzehai.mywebsite.model.Category;
-import com.sunzehai.mywebsite.util.DBUtil;
+import com.sunzehai.mywebsite.util.JdbcUtils;
 
 public class CategoryDao implements AutoCloseable {
 	
@@ -21,7 +21,7 @@ public class CategoryDao implements AutoCloseable {
 	private ResultSet rs;
 	
 	public CategoryDao() {
-		conn = DBUtil.getInstance().getConnection();
+		conn = JdbcUtils.getConnection();
 	}
 	
 	public List<Category> findAll() throws SQLException {

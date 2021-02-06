@@ -11,7 +11,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="my-website" />
+          <element id="module-output" name="my-website-server" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />

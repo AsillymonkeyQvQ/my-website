@@ -3,7 +3,6 @@ package com.sunzehai.mywebsite.util;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -20,7 +19,7 @@ public class JdbcUtils {
 	
 	static {
 		try {
-			properties.load(ClassLoader.getSystemClassLoader().getResourceAsStream("jdbc.properties"));
+			properties.load(ClassLoader.getSystemClassLoader().getResourceAsStream("config/jdbc.properties"));
 		} catch (IOException ex) {
 			throw new RuntimeException("Cloud not load jdbc.properties", ex);
 		}
@@ -42,29 +41,6 @@ public class JdbcUtils {
 		}
 		
 		return conn;
-	}
-	
-	public static Integer executeUpdate(String sql, Object... args) {
-		Integer result = null;
-		
-		Connection conn = null;
-		PreparedStatement pstm = null;
-		
-		try {
-			conn = getConnection();
-			pstm = conn.prepareStatement(sql);
-			for(int i = 0; i < args.length; i++) {
-				pstm.setObject(i + 1, args[i]);
-			}
-			result = pstm.executeUpdate();
-		} catch (SQLException ex) {
-			throw new RuntimeException("Exception on executing update", ex);
-		} finally {
-			closeStatement(pstm);
-			closeConnection(conn);
-		}
-		
-		return result;
 	}
 	
 	/**

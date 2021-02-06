@@ -4,19 +4,11 @@ public class Category {
 	
 	private Integer id;
 	
+	private Integer parentId;
+	
 	private String name;
 	
 	private String description;
-	
-	public Category() {
-		
-	}
-
-	public Category(Integer id, String name, String description) {
-		this.id = id;
-		this.name = name;
-		this.description = description;
-	}
 
 	public Integer getId() {
 		return id;
@@ -24,6 +16,14 @@ public class Category {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getParentId() {
+		return parentId;
+	}
+
+	public void setParentId(Integer parentId) {
+		this.parentId = parentId;
 	}
 
 	public String getName() {
@@ -40,6 +40,12 @@ public class Category {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", parentId=" + parentId + ", name=" + name + ", description=" + description
+				+ "]";
 	}
 	
 }

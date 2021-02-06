@@ -19,7 +19,7 @@ public class JdbcUtils {
 	
 	static {
 		try {
-			properties.load(ClassLoader.getSystemClassLoader().getResourceAsStream("config/jdbc.properties"));
+			properties.load(JdbcUtils.class.getClassLoader().getResourceAsStream("config/jdbc.properties"));
 		} catch (IOException ex) {
 			throw new RuntimeException("Cloud not load jdbc.properties", ex);
 		}

@@ -1,9 +1,11 @@
 package com.sunzehai.mywebsite.model;
 
 import com.sunzehai.mywebsite.annotation.Column;
+import com.sunzehai.mywebsite.annotation.Id;
 
 public class Category {
 
+	@Id
 	@Column(name = "id")
 	private Integer id;
 

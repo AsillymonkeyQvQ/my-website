@@ -1,11 +1,13 @@
 package com.sunzehai.mywebsite.model;
 
 import com.sunzehai.mywebsite.annotation.Column;
+import com.sunzehai.mywebsite.annotation.Id;
 
 import java.sql.Timestamp;
 
 public class Article {
 
+    @Id
     @Column(name = "id")
     private Integer id;
 
@@ -29,6 +31,18 @@ public class Article {
 
     @Column(name = "updatedAt")
     private Timestamp updatedAt;
+
+    @Column(name = "categoryId")
+    private Integer categoryId;
+
+    @Column(name = "categoryParentId")
+    private Integer categoryParentId;
+
+    @Column(name = "categoryName")
+    private String categoryName;
+
+    @Column(name = "categoryDescription")
+    private String categoryDescription;
 
     public Integer getId() {
         return id;
@@ -94,6 +108,38 @@ public class Article {
         this.updatedAt = updatedAt;
     }
 
+    public Integer getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public Integer getCategoryParentId() {
+        return categoryParentId;
+    }
+
+    public void setCategoryParentId(Integer categoryParentId) {
+        this.categoryParentId = categoryParentId;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    public String getCategoryDescription() {
+        return categoryDescription;
+    }
+
+    public void setCategoryDescription(String categoryDescription) {
+        this.categoryDescription = categoryDescription;
+    }
+
     @Override
     public String toString() {
         return "Article{" +
@@ -105,6 +151,11 @@ public class Article {
                 ", published='" + published + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
+                ", categoryId=" + categoryId +
+                ", categoryParentId=" + categoryParentId +
+                ", categoryName='" + categoryName + '\'' +
+                ", categoryDescription='" + categoryDescription + '\'' +
                 '}';
     }
+
 }

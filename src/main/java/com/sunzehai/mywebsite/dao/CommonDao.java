@@ -26,7 +26,7 @@ public class CommonDao {
 	
 	private Logger logger = LoggerFactory.getLogger(CommonDao.class);
 	
-	private Path sqlFilePath = Paths.get(ClassLoader.getSystemClassLoader().getResource("sql").getPath());
+	private Path sqlFilePath = Paths.get(CommonDao.class.getClassLoader().getResource("sql").getPath());
 
 	private Map<SqlFileCons, String> map = new HashMap<>();
 	

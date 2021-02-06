@@ -1,6 +1,15 @@
 package com.sunzehai.mywebsite.service;
 
+import com.sunzehai.mywebsite.model.Article;
 import org.pegdown.PegDownProcessor;
+
+import javax.servlet.ServletContext;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.stream.Collectors;
 
 public class MarkdownService {
 	
@@ -19,14 +28,14 @@ public class MarkdownService {
 		return instance;
 	}
 	
-//	public String getAticleHtml(ServletContext context, Article article) throws IOException {
-//		String result = "";
-//		
-//		Path path = Paths.get(context.getRealPath("/articles/" + article.getId() + ".md"));
-//		String markdownSource = Files.lines(path, Charset.forName("utf-8")).collect(Collectors.joining("\n"));
-//		result = processor.markdownToHtml(markdownSource);
-//		
-//		return result;
-//	}
+	public String getAticleHtml(ServletContext context, Article article) throws IOException {
+		String result = "";
+
+		Path path = Paths.get(context.getRealPath("/articles/" + article.getId() + ".md"));
+		String markdownSource = Files.lines(path, Charset.forName("utf-8")).collect(Collectors.joining("\n"));
+		result = processor.markdownToHtml(markdownSource);
+
+		return result;
+	}
 	
 }

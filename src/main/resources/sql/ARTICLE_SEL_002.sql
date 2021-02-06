@@ -16,4 +16,5 @@ LEFT JOIN article_category ac
        ON ac.articleId = a.id
 LEFT JOIN category c
        ON c.id = ac.categoryId
+WHERE a.id = ?
 ;

@@ -8,7 +8,7 @@
     <nav class="navigation">
         <ul>
         	<c:forEach var="category" items="${applicationScope.categories}">
-        		<li><a href="${contextPath}/category/${category.name}">${category.name}</a></li>
+        		<li><a href="${contextPath}/category/${category.id}">${category.name}</a></li>
         	</c:forEach>
         </ul>
     </nav>

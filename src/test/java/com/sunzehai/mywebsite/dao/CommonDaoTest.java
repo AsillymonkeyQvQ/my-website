@@ -1,7 +1,9 @@
 package com.sunzehai.mywebsite.dao;
 
+import java.sql.Connection;
 import java.util.List;
 
+import com.sunzehai.mywebsite.util.JdbcUtils;
 import org.junit.Test;
 
 import com.sunzehai.mywebsite.constant.SqlFileCons;

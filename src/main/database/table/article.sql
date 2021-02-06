@@ -8,4 +8,4 @@ CREATE TABLE article (
   , createdAt           DATETIME            NOT NULL
   , updatedAt           DATETIME            NULL
   , PRIMARY KEY (id)
-)
+);

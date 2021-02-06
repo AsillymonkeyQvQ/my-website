@@ -1,4 +1,2 @@
-/.DS_Store
-/.settings/
 /target/
 /src/main/resources/config/jdbc.properties

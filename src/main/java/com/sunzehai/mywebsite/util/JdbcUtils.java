@@ -26,7 +26,7 @@ public class JdbcUtils {
 	}
 	
 	public static Connection getConnection() {
-		Connection conn = null;
+		Connection conn;
 		
 		String driver = properties.getProperty("jdbc.driver");
 		String url = properties.getProperty("jdbc.url");

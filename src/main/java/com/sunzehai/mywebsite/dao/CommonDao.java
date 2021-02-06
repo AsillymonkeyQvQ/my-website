@@ -15,6 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.sunzehai.mywebsite.annotation.Column;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -70,15 +71,22 @@ public class CommonDao {
 			
 			rs = pstm.executeQuery();
 			ResultSetMetaData rsmd = rs.getMetaData();
+			Field[] fields = clazz.getDeclaredFields();
 			while (rs.next()) {
 				T entity = clazz.newInstance();
 				for (int i = 0; i < rsmd.getColumnCount(); i++) {
 					String name = rsmd.getColumnLabel(i + 1);
 					Object value = rs.getObject(i + 1);
 					
-					Field field = clazz.getDeclaredField(name);
-					field.setAccessible(true);
-					field.set(entity, value);
+					Arrays.stream(fields)
+							.filter(field -> field.isAnnotationPresent(Column.class))
+							.filter(field -> field.getAnnotation(Column.class).name().equals(name))
+							.findFirst().ifPresent(field -> {
+								field.setAccessible(true);
+								try {
+									field.set(entity, value);
+								} catch (IllegalAccessException ex) {}
+							});
 				}
 				result.add(entity);
 			}

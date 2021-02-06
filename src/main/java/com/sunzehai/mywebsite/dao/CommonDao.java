@@ -10,9 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import com.sunzehai.mywebsite.annotation.Column;
@@ -29,6 +27,8 @@ public class CommonDao {
 	private Logger logger = LoggerFactory.getLogger(CommonDao.class);
 	
 	private Path sqlFilePath = Paths.get(ClassLoader.getSystemClassLoader().getResource("sql").getPath());
+
+	private Map<SqlFileCons, String> map = new HashMap<>();
 	
 	private CommonDao() {
 		
@@ -42,16 +42,30 @@ public class CommonDao {
 	}
 	
 	public <T> List<T> getResultList(Class<T> clazz, SqlFileCons sqlFileCons, Object... args) {
-		String sql = "";
-		try {
-			sql = Files.lines(sqlFilePath.resolve(sqlFileCons.name() + ".sql")).collect(Collectors.joining("\n"));
-		} catch (IOException ex) {
-			throw new RuntimeException("Cloud not load target sql file", ex);
+		List<T> result;
+
+		String sql = map.get(sqlFileCons);
+		if (sql == null) {
+			try {
+				sql = Files.lines(sqlFilePath.resolve(sqlFileCons.name() + ".sql")).collect(Collectors.joining("\n"));
+				map.put(sqlFileCons, sql);
+			} catch (IOException ex) {
+				throw new RuntimeException("Cloud not load target sql file", ex);
+			}
 		}
+
+		long startTime = System.nanoTime();
+		result = getResultList(clazz, sql, args);
+		long estimatedTime = (System.nanoTime() - startTime) / 1_000_000; // ms
 		
-		logger.debug("\n-- {}\n{}\nbind => [{}]", sqlFileCons.name(), sql, Arrays.stream(args).map(arg -> arg.toString()).collect(Collectors.joining(", ")));
+		logger.debug("\n-- {}\n{}\nbind => [{}]\n{} rows retrieved in {} ms",
+				sqlFileCons.name(),
+				sql,
+				Arrays.stream(args).map(arg -> arg.toString()).collect(Collectors.joining(", ")),
+				result.size(),
+				estimatedTime);
 		
-		return getResultList(clazz, sql, args);
+		return result;
 	}
 	
 	private <T> List<T> getResultList(Class<T> clazz, String sql, Object... args) {
@@ -91,7 +105,7 @@ public class CommonDao {
 				result.add(entity);
 			}
 		} catch (Exception ex) {
-			throw new RuntimeException("Exception on executing query");
+			throw new RuntimeException("Exception on executing query", ex);
 		} finally {
 			JdbcUtils.closeConnection(conn);
 			JdbcUtils.closeStatement(pstm);

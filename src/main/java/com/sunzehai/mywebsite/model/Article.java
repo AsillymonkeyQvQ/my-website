@@ -23,6 +23,9 @@ public class Article {
     @Column(name = "summary")
     private String summary;
 
+    @Column(name = "banner")
+    private String banner;
+
     @Column(name = "published")
     private String published;
 
@@ -82,6 +85,14 @@ public class Article {
 
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    public String getBanner() {
+        return banner;
+    }
+
+    public void setBanner(String banner) {
+        this.banner = banner;
     }
 
     public String getPublished() {

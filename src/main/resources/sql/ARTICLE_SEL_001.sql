@@ -4,6 +4,7 @@ SELECT
   , a.parentId     AS parentId
   , a.title        AS title
   , a.summary      AS summary
+  , a.banner       AS banner
   , a.published    AS published
   , a.createdAt    AS createdAt
   , a.updatedAt    AS updatedAt
@@ -16,4 +17,5 @@ LEFT JOIN article_category ac
        ON ac.articleId = a.id
 LEFT JOIN category c
        ON c.id = ac.categoryId
+ORDER BY a.id DESC
 ;

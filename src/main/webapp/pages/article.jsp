@@ -19,7 +19,7 @@
 		<!-- main -->
 		<main id="main-article">
 			<section class="article-wrapper">
-				<img alt="${requestScope.article.title}" src="${contextPath}/images/${requestScope.article.id}.jpg">
+				<img alt="${requestScope.article.title}" src="${contextPath}/images/${requestScope.article.banner}">
 				<article class="markdown-body">
 					${html}
 				</article>

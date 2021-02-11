@@ -1,10 +1,11 @@
 package com.sunzehai.mywebsite.service;
 
 import com.sunzehai.mywebsite.model.Article;
+import com.sunzehai.mywebsite.util.ConfigUtil;
 
 import javax.servlet.ServletContext;
 import java.io.*;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -28,19 +29,21 @@ public class MarkdownService {
 	public String getAticleHtml(ServletContext context, Article article) throws IOException {
 		StringBuilder builder = new StringBuilder();
 
-		Path path = Paths.get(context.getRealPath(String.format("/articles/%d/%d.md", article.getId(), article.getId())));
-		String text = Files.lines(path, Charset.forName("utf-8"))
-				             .map(s -> s.replaceAll("images/", String.format("%s/articles/%d/images/", context.getContextPath(), article.getId())))
+		Path articlePath = Paths.get(context.getRealPath("/articles")).resolve(String.format("%04d", article.getId()));
+
+		Path markdownPath = articlePath.resolve(String.format("%s.md", article.getTitle()));
+		String text = Files.lines(markdownPath, StandardCharsets.UTF_8)
+				             .map(s -> s.replaceAll("images/", String.format("%s/articles/%04d/images/", context.getContextPath(), article.getId())))
 							 .collect(Collectors.joining("\\n"));
 		String json = String.format("{\"text\":\"%s\"}", text);
 
-		path = Paths.get(context.getRealPath(String.format("/articles/%d/%d.json", article.getId(), article.getId())));
-		try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path.toFile())))) {
+		Path tmpFilePath = articlePath.resolve(String.format("%04d.json", article.getId()));
+		try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(tmpFilePath.toFile())))) {
 			writer.write(json);
 			writer.flush();
 		}
 
-		String cmd = "curl -X POST -H \"Accept: application/vnd.github.v3+json\" https://api.github.com/markdown -d @" + path.toRealPath();
+		String cmd = "curl -X POST -H \"Accept: application/vnd.github.v3+json\" https://api.github.com/markdown -d @" + tmpFilePath.toRealPath();
 		Runtime runtime = Runtime.getRuntime();
 		Process process = runtime.exec(cmd);
 		try {

@@ -15,7 +15,7 @@ for (int i = 0; i < list.size(); i++) {
 
 ## 结构
 
-![Iterator](images/Iterator.png)
+![Iterator](images/Iterator-uml.png)
 
 * Aggregate
   - 定义创建相应迭代器对象的接口。
@@ -39,7 +39,7 @@ for (int i = 0; i < list.size(); i++) {
 
 ## 应用实例
 1. Java中的ArrayList
-  ![Iterator design pattern in java](images/Iterator-java.png)
+  ![Iterator design pattern in java](images/Iterator-in-java.png)
   
     | Iterator Pattern  | Iterator Pattern in Java    |
     | ----------------- | --------------------------- |

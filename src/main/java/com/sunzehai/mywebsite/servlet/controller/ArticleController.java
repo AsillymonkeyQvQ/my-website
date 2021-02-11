@@ -10,10 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet("/article/*")
 public class ArticleController extends HttpServlet {
+
+	private static Map<Integer, String> map = new HashMap<>();
 
 	private static final long serialVersionUID = 1L;
 	
@@ -36,7 +40,11 @@ public class ArticleController extends HttpServlet {
 				                  .findFirst().get();
 
 		// Get specific article html string.
-		String html = MarkdownService.getInstance().getAticleHtml(request.getServletContext(), article);
+		String html = map.get(article.getId());
+		if (html == null) {
+			html = MarkdownService.getInstance().getAticleHtml(request.getServletContext(), article);
+			map.put(article.getId(), html);
+		}
 
 		// Set attributes.
 		request.setAttribute("article", article);

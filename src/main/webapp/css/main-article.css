@@ -15,7 +15,7 @@
 	border-radius: 6px;
 }
 
-#main-article .article-wrapper img {
+#main-article .article-wrapper > img {
 	width: 1062px;
 	height: 675px;
 	margin: 0 auto;

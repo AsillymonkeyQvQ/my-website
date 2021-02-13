@@ -1,6 +1,7 @@
 # Iterator - 迭代器
-> 提供一种方法顺序访问一个聚合对象中各个元素，而又不需要暴露该对象的内部表示。
+> *提供一种方法顺序访问一个聚合对象中各个元素，而又不需要暴露该对象的内部表示。*
 
+## 动机
 如果说要对一个聚合对象（如List）进行遍历操作，最先想到的方法可能是像下面一样去使用for循环。利用`get(int)`方法来访问特定位置的元素，利用递增的`i`来完成对列表的扫描，利用`size()`方法来获取列表元素的个数用以对循环是否终止的判断。
 ```java
 for (int i = 0; i < list.size(); i++) {
@@ -39,7 +40,7 @@ for (int i = 0; i < list.size(); i++) {
 
 ## 应用实例
 1. Java中的ArrayList
-  ![Iterator design pattern in java](images/Iterator-in-java.png)
+  ![Iterator pattern in java](images/Iterator-in-java.png)
   
     | Iterator Pattern  | Iterator Pattern in Java    |
     | ----------------- | --------------------------- |

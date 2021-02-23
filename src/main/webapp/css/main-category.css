@@ -1,3 +1,47 @@
 #main-category {
     min-height: 1500px;
 }
+
+#main-category .sub-categories {
+    height: 200px;
+    margin-bottom: 50px;
+    padding: 20px 69px;
+    background-color: #f5f7fa;
+}
+
+#main-category .sub-categories span {
+    display: inline-block;
+    margin: 0 12px 12px 0;
+    padding: 8px;
+    font-family: "-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji";
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+}
+
+#main-category .sub-categories ul {
+    display: inline-block;
+}
+
+#main-category .sub-categories ul li {
+    display: inline-block;
+    margin: 0 12px 12px 0;
+    padding: 8px;
+}
+
+#main-category .sub-categories ul li.current {
+    border-radius: 6px;
+    background: rgba(233,142,70,.1);
+}
+
+#main-category .sub-categories ul li a {
+    font-family: "-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji";
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+#main-category .sub-categories ul li.current a {
+    color: #e98e46;
+}

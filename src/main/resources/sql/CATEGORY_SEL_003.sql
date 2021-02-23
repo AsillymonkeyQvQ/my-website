@@ -4,5 +4,5 @@ SELECT
   , name
   , description
 FROM category
-WHERE parentId = 0
+WHERE parentId = ?
 ;

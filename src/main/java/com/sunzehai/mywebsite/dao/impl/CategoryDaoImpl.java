@@ -23,4 +23,8 @@ public class CategoryDaoImpl implements CategoryDao {
         return list.get(0);
     }
 
+    @Override
+    public List<Category> findByParentId(Integer parentId) {
+        return CommonDao.instance().getResultList(Category.class, SqlFileCons.CATEGORY_SEL_003, parentId);
+    }
 }

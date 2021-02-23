@@ -23,4 +23,8 @@ public class ArticleDaoImpl implements ArticleDao {
         return articles.get(0);
     }
 
+    @Override
+    public List<Article> findByCategoryId(Integer categoryId) {
+        return CommonDao.instance().getResultList(Article.class, SqlFileCons.ARTICLE_SEL_003, categoryId, categoryId);
+    }
 }

@@ -1,10 +1,10 @@
-package com.sunzehai.mywebsite.dao;
+package com.sunzehai.mywebsite.service;
 
 import com.sunzehai.mywebsite.model.Article;
 
 import java.util.List;
 
-public interface ArticleDao {
+public interface ArticleService {
 
     List<Article> findAll();
 

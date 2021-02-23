@@ -1,10 +1,10 @@
-package com.sunzehai.mywebsite.dao;
+package com.sunzehai.mywebsite.service;
 
 import com.sunzehai.mywebsite.model.Category;
 
 import java.util.List;
 
-public interface CategoryDao {
+public interface CategoryService {
 
     List<Category> findAll();
 

@@ -18,6 +18,15 @@
 		
 		<!-- main -->
 		<main id="main-category">
+			<section class="sub-categories">
+				<span>CATEGORY:</span>
+				<ul>
+					<li <c:if test="${requestScope.currentSubCategory == null}">class="current"</c:if>><a href="${contextPath}/category/${category.id}">ALL</a></li>
+					<c:forEach var="subCategory" items="${requestScope.subCategories}">
+						<li <c:if test="${requestScope.currentSubCategory.id == subCategory.id}">class="current"</c:if>><a href="${contextPath}/category/${category.id}?subCategory=${subCategory.id}">${subCategory.name}</a></li>
+					</c:forEach>
+				</ul>
+			</section>
 			<section class="articles">
 				<c:forEach var="article" items="${requestScope.articles}">
 					<%@ include file="../include/article.jsp" %>

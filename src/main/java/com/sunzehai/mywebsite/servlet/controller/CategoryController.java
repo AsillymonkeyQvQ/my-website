@@ -3,13 +3,17 @@ package com.sunzehai.mywebsite.servlet.controller;
 import com.sunzehai.mywebsite.exception.NotFoundException;
 import com.sunzehai.mywebsite.model.Article;
 import com.sunzehai.mywebsite.model.Category;
+import com.sunzehai.mywebsite.model.ViewCategoryArticleCounts;
 import com.sunzehai.mywebsite.service.ArticleService;
 import com.sunzehai.mywebsite.service.CategoryService;
+import com.sunzehai.mywebsite.service.ViewCategoryArticleCountsService;
 import com.sunzehai.mywebsite.service.impl.ArticleServiceImpl;
 import com.sunzehai.mywebsite.service.impl.CategoryServiceImpl;
+import com.sunzehai.mywebsite.service.impl.ViewCategoryArticleCountsServiceImpl;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,6 +29,8 @@ public class CategoryController extends HttpServlet {
 	private CategoryService categoryService = new CategoryServiceImpl();
 
 	private ArticleService articleService = new ArticleServiceImpl();
+
+	private ViewCategoryArticleCountsService viewCategoryArticleCountsService = new ViewCategoryArticleCountsServiceImpl();
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -59,11 +65,15 @@ public class CategoryController extends HttpServlet {
 		@SuppressWarnings("unchecked")
 		List<Article> articles = articleService.findByCategoryId(subCategory == null ? Integer.parseInt(param) : Integer.parseInt(subCategory));
 
+		// Get category articles counts
+		Map<Integer, ViewCategoryArticleCounts> viewCategoryArticleCountsMap = viewCategoryArticleCountsService.findAll();
+
 		// Set attributes.
 		request.setAttribute("category", category);
 		request.setAttribute("articles", articles);
 		request.setAttribute("subCategories", subCategories);
 		request.setAttribute("currentSubCategory", currentSubCategory);
+		request.setAttribute("viewCategoryArticleCountsMap", viewCategoryArticleCountsMap);
 
 		// Request forwarding.
 		request.getRequestDispatcher("/pages/category.jsp").forward(request, response);

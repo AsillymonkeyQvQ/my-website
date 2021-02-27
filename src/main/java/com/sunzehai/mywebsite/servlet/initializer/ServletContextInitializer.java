@@ -1,9 +1,9 @@
 package com.sunzehai.mywebsite.servlet.initializer;
 
-import com.sunzehai.mywebsite.dao.ArticleDao;
-import com.sunzehai.mywebsite.dao.CategoryDao;
-import com.sunzehai.mywebsite.dao.impl.ArticleDaoImpl;
-import com.sunzehai.mywebsite.dao.impl.CategoryDaoImpl;
+import com.sunzehai.mywebsite.dao.ArticleDAO;
+import com.sunzehai.mywebsite.dao.CategoryDAO;
+import com.sunzehai.mywebsite.dao.impl.ArticleDAOImpl;
+import com.sunzehai.mywebsite.dao.impl.CategoryDAOImpl;
 import com.sunzehai.mywebsite.model.Article;
 import com.sunzehai.mywebsite.model.Category;
 
@@ -20,11 +20,11 @@ public class ServletContextInitializer extends HttpServlet {
 	public void init() throws ServletException {
 		ServletContext context = this.getServletContext();
 
-		CategoryDao categoryDao = new CategoryDaoImpl();
+		CategoryDAO categoryDao = new CategoryDAOImpl();
 		List<Category> categories = categoryDao.findAll();
 		context.setAttribute("categories", categories);
 
-		ArticleDao articleDao = new ArticleDaoImpl();
+		ArticleDAO articleDao = new ArticleDAOImpl();
 		List<Article> articles = articleDao.findAll();
 		context.setAttribute("articles", articles);
 	}

@@ -1,21 +1,13 @@
 package com.sunzehai.mywebsite.model;
 
-import com.sunzehai.mywebsite.annotation.Column;
-import com.sunzehai.mywebsite.annotation.Id;
-
 public class Category {
 
-	@Id
-	@Column(name = "id")
 	private Integer id;
 
-	@Column(name = "parentId")
 	private Integer parentId;
 
-	@Column(name = "name")
 	private String name;
 
-	@Column(name = "description")
 	private String description;
 
 	public Integer getId() {

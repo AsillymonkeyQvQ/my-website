@@ -4,7 +4,7 @@ import com.sunzehai.mywebsite.model.Article;
 
 import java.util.List;
 
-public interface ArticleDao {
+public interface ArticleDAO {
 
     List<Article> findAll();
 

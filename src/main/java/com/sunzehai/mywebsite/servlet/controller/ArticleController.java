@@ -3,6 +3,7 @@ package com.sunzehai.mywebsite.servlet.controller;
 import com.sunzehai.mywebsite.exception.NotFoundException;
 import com.sunzehai.mywebsite.model.Article;
 import com.sunzehai.mywebsite.service.MarkdownService;
+import com.sunzehai.mywebsite.service.impl.MarkdownServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +21,8 @@ public class ArticleController extends HttpServlet {
 	private static Map<Integer, String> map = new HashMap<>();
 
 	private static final long serialVersionUID = 1L;
+
+	private MarkdownService markdownService = new MarkdownServiceImpl();
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -42,7 +45,7 @@ public class ArticleController extends HttpServlet {
 		// Get specific article html string.
 		String html = map.get(article.getId());
 		if (html == null) {
-			html = MarkdownService.getInstance().getAticleHtml(request.getServletContext(), article);
+			html = markdownService.getArticleHtml(request.getServletContext(), article);
 			map.put(article.getId(), html);
 		}
 

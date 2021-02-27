@@ -1,7 +1,7 @@
 package com.sunzehai.mywebsite.service.impl;
 
-import com.sunzehai.mywebsite.dao.ArticleDao;
-import com.sunzehai.mywebsite.dao.impl.ArticleDaoImpl;
+import com.sunzehai.mywebsite.dao.ArticleDAO;
+import com.sunzehai.mywebsite.dao.impl.ArticleDAOImpl;
 import com.sunzehai.mywebsite.model.Article;
 import com.sunzehai.mywebsite.service.ArticleService;
 
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ArticleServiceImpl implements ArticleService {
 
-    private ArticleDao dao = new ArticleDaoImpl();
+    private ArticleDAO dao = new ArticleDAOImpl();
 
     @Override
     public List<Article> findAll() {

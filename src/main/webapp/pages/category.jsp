@@ -6,6 +6,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8"/>
+		<link rel="shortcut icon" href="${contextPath}/images/favicon.svg">
 		<link rel="stylesheet" type="text/css" href="${contextPath}/css/global.css"/>
 		<link rel="stylesheet" type="text/css" href="${contextPath}/css/main-category.css"/>
 		<link rel="stylesheet" type="text/css" href="${contextPath}/css/font-awesome.css"/>

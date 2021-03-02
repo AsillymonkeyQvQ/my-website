@@ -25,6 +25,7 @@ public class MarkdownServiceImpl implements MarkdownService {
 
 		Path markdownPath = articlePath.resolve(String.format("%s.md", article.getTitle()));
 		String text = Files.lines(markdownPath, StandardCharsets.UTF_8)
+				             .map(s -> s.replaceAll("\\\\", "\\\\\\\\"))
 							 .map(s -> s.replaceAll("\"", "\\\\\""))
 				             .map(s -> s.replaceAll("images/", String.format("%s/articles/%04d/images/", context.getContextPath(), article.getId())))
 							 .collect(Collectors.joining("\\n"));

@@ -1,6 +1,7 @@
 package com.sunzehai.mywebsite.service;
 
 import com.sunzehai.mywebsite.model.Article;
+import com.sunzehai.mywebsite.model.Pager;
 
 import java.util.List;
 
@@ -10,6 +11,6 @@ public interface ArticleService {
 
     Article findById(Integer id);
 
-    List<Article> findByCategoryId(Integer categoryId);
+    Pager<Article> findByCategoryId(Integer categoryId, Integer currentPage);
 
 }

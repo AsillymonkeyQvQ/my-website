@@ -4,6 +4,7 @@ import com.sunzehai.mywebsite.constant.SqlFileCons;
 import com.sunzehai.mywebsite.dao.ArticleDAO;
 import com.sunzehai.mywebsite.dao.BaseDAO;
 import com.sunzehai.mywebsite.model.Article;
+import com.sunzehai.mywebsite.model.Pager;
 import com.sunzehai.mywebsite.util.JDBCUtils;
 import org.apache.commons.dbutils.DbUtils;
 
@@ -29,10 +30,11 @@ public class ArticleDAOImpl extends BaseDAO<Article> implements ArticleDAO {
     }
 
     @Override
-    public List<Article> findByCategoryId(Integer categoryId) {
+    public List<Article> findByCategoryId(Integer categoryId, Integer start, Integer rowCount) {
         Connection conn = JDBCUtils.getConnection();
-        List<Article> result = getResultList(conn, SqlFileCons.ARTICLE_SEL_003, categoryId, categoryId);
+        List<Article> result = getResultList(conn, SqlFileCons.ARTICLE_SEL_003, categoryId, categoryId, start, rowCount);
         DbUtils.closeQuietly(conn);
         return result;
     }
+
 }

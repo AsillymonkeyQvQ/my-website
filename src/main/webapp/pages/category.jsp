@@ -30,9 +30,18 @@
 				</ul>
 			</section>
 			<section class="articles">
-				<c:forEach var="article" items="${requestScope.articles}">
+				<c:forEach var="article" items="${requestScope.pager.dataList}">
 					<%@ include file="../include/article.jsp" %>
 				</c:forEach>
+			</section>
+			<section class="pagination">
+				<ul>
+					<li><a href="${contextPath}/category/${category.id}?<c:if test="${currentSubCategory != null}">subCategory=${currentSubCategory.id}&</c:if>currentPage=${pager.currentPage - 1 < 1 ? 1 : pager.currentPage - 1}">&laquo;</a></li>
+					<c:forEach var="i" begin="1" end="${pager.totalPage}">
+						<li><a href="${contextPath}/category/${category.id}?<c:if test="${currentSubCategory != null}">subCategory=${currentSubCategory.id}&</c:if>currentPage=${i}">${i}</a></li>
+					</c:forEach>
+					<li><a href="${contextPath}/category/${category.id}?<c:if test="${currentSubCategory != null}">subCategory=${currentSubCategory.id}&</c:if>currentPage=${pager.currentPage + 1 > pager.totalPage ? pager.totalPage : pager.currentPage + 1}">&raquo;</a></li>
+				</ul>
 			</section>
 		</main>
 		

@@ -22,4 +22,5 @@ LEFT JOIN category c2
 WHERE c.id = ?
    OR c2.id = ?
 ORDER BY id DESC
+LIMIT ?, ?
 ;

@@ -8,4 +8,6 @@ public interface ViewCategoryArticleCountsDAO {
 
     List<ViewCategoryArticleCounts> findAll();
 
+    ViewCategoryArticleCounts findByCategoryId(Integer categoryId);
+
 }

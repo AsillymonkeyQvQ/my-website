@@ -1,6 +1,7 @@
 package com.sunzehai.mywebsite.dao;
 
 import com.sunzehai.mywebsite.model.Article;
+import com.sunzehai.mywebsite.model.Pager;
 
 import java.util.List;
 
@@ -10,6 +11,6 @@ public interface ArticleDAO {
 
     Article findById(Integer id);
 
-    List<Article> findByCategoryId(Integer categoryId);
+    List<Article> findByCategoryId(Integer categoryId, Integer start, Integer rowCount);
 
 }

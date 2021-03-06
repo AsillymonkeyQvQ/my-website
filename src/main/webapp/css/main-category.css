@@ -45,3 +45,33 @@
 #main-category .sub-categories ul li.current a {
     color: #e98e46;
 }
+
+#main-category .pagination {
+    margin: 20px 0;
+    clear: both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-category .pagination ul {
+
+}
+
+#main-category .pagination ul li {
+    display: inline-block;
+}
+
+#main-category .pagination ul li a {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 50px;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+#main-category .pagination ul li a:hover {
+    background-color: #eee;
+}

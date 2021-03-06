@@ -3,6 +3,7 @@ package com.sunzehai.mywebsite.servlet.controller;
 import com.sunzehai.mywebsite.exception.NotFoundException;
 import com.sunzehai.mywebsite.model.Article;
 import com.sunzehai.mywebsite.model.Category;
+import com.sunzehai.mywebsite.model.Pager;
 import com.sunzehai.mywebsite.model.ViewCategoryArticleCounts;
 import com.sunzehai.mywebsite.service.ArticleService;
 import com.sunzehai.mywebsite.service.CategoryService;
@@ -38,7 +39,8 @@ public class CategoryController extends HttpServlet {
 		String url = request.getRequestURL().toString();
 		String param = url.substring(url.lastIndexOf("/") + 1);
 
-		String subCategory = request.getParameter("subCategory");
+		String subCategoryParam = request.getParameter("subCategory");
+		String currentPageParam = request.getParameter("currentPage");
 
 		// Check parameter.
 		@SuppressWarnings("unchecked")
@@ -55,22 +57,23 @@ public class CategoryController extends HttpServlet {
 
 		// Get current sub category
 		Category currentSubCategory = null;
-		if (subCategory != null) {
+		if (subCategoryParam != null) {
 			currentSubCategory = subCategories.stream()
-					.filter(c -> c.getId().equals(Integer.parseInt(subCategory)))
+					.filter(c -> c.getId().equals(Integer.parseInt(subCategoryParam)))
 					.findAny().orElse(null);
 		}
 
 		// Get specific category articles
-		@SuppressWarnings("unchecked")
-		List<Article> articles = articleService.findByCategoryId(subCategory == null ? Integer.parseInt(param) : Integer.parseInt(subCategory));
+		Integer categoryId = subCategoryParam == null ? Integer.parseInt(param) : Integer.parseInt(subCategoryParam);
+		Integer currentPage = currentPageParam == null ? 1 : Integer.parseInt(currentPageParam);
+		Pager<Article> pager = articleService.findByCategoryId(categoryId, currentPage);
 
 		// Get category articles counts
 		Map<Integer, ViewCategoryArticleCounts> viewCategoryArticleCountsMap = viewCategoryArticleCountsService.findAll();
 
 		// Set attributes.
 		request.setAttribute("category", category);
-		request.setAttribute("articles", articles);
+		request.setAttribute("pager", pager);
 		request.setAttribute("subCategories", subCategories);
 		request.setAttribute("currentSubCategory", currentSubCategory);
 		request.setAttribute("viewCategoryArticleCountsMap", viewCategoryArticleCountsMap);

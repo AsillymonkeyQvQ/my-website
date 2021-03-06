@@ -15,9 +15,16 @@ public class ViewCategoryArticleCountsDAOImpl extends BaseDAO<ViewCategoryArticl
     @Override
     public List<ViewCategoryArticleCounts> findAll() {
         Connection conn = JDBCUtils.getConnection();
-        List<ViewCategoryArticleCounts> result = getResultList(conn, SqlFileCons.VIEW_CATEGORY_ARTICLE_COUNTS_SEL);
+        List<ViewCategoryArticleCounts> result = getResultList(conn, SqlFileCons.VIEW_CATEGORY_ARTICLE_COUNTS_SEL_001);
         DbUtils.closeQuietly(conn);
         return result;
     }
 
+    @Override
+    public ViewCategoryArticleCounts findByCategoryId(Integer categoryId) {
+        Connection conn = JDBCUtils.getConnection();
+        ViewCategoryArticleCounts result = getResult(conn, SqlFileCons.VIEW_CATEGORY_ARTICLE_COUNTS_SEL_002, categoryId);
+        DbUtils.closeQuietly(conn);
+        return result;
+    }
 }
